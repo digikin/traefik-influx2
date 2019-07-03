@@ -1,5 +1,5 @@
 ## Collection
-For this I am testing out influxDB new 2.0-alpha release to collect metrics from traefik. The new version has way better graphs and abilites but the problem is that you cant write directly to the new influx without telegraf. So we have to generate a token for the new telegraf HTTP Listener v2 Input Plugin to relay the data.  
+For this I am testing out influxDB new 2.0-alpha release to collect metrics from traefik. The new version has way better graphs and abilites but the problem is that you cant write directly to the new influx without telegraf. So we have to generate a token for telegraf HTTP Listener v2 Input Plugin to relay the data.  
 
 ## Directions
 ```
