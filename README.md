@@ -11,7 +11,7 @@ Visit http://influx.localhost for the interface.
 You will have to create a login, organization and bucket.  
 When thats finished select expert to configure the rest later.  Select the tool on the left side menu and then token.  
 Click on your name and copy that token along with replacing the other variables in the telegraf.conf file.  
-_Hint: organization, bucket and token need to be the values you entered when logging into influxdb._  
+_Hint: organization and bucket need to be the values you entered when logging into influxdb._  
 ```
 [[outputs.influxdb_v2]]
   urls = ["http://influxdb:9999"]
