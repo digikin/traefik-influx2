@@ -25,7 +25,7 @@ docker-compose up -d telegraf
 ```
 
 The listner port for telegraf has been moved to 8081 because it interfears with traefiks dashboard port.
-
+Login info for the dashboard: admin:supersecret
 The traefik-demo.json file is just a InfluxDB 2.0 demo dashboard that you can import.  
 _I am working on creating a Traefik Dashboard but if anyone comes up with something cool please share. :)_
 
