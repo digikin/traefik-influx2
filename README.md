@@ -9,7 +9,7 @@ docker-compose up -d influxdb
 ```
 Visit http://influx.localhost for the interface.  
 You will have to create a login, organization and bucket.  
-When thats finished select expert to configure the rest later.  Select the tool on the left side menu and then token.  
+When thats finished select expert to configure the rest later.  Select the tool icon on the left side menu and then token.  
 Click on your name to get your token, then along with that replace the other variables in the telegraf.conf file.  
 _Hint: organization and bucket need to be the values you entered when logging into influxdb._  
 ```
