@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v1.7
+    command: --docker
+    ports:
+      - 80:80
+    networks:
+      - proxy
+      - internal
+    labels:
+      - "traefik.frontend.rule=Host:web.localhost"
+      - "traefik.port=8080"
+      - "traefik.docker.network=proxy"
+    volumes:
+      - ./traefik.toml:/traefik.toml
+      - /var/run/docker.sock:/var/run/docker.sock
+  telegraf:
+    image: telegraf:1.9.5
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=localhost"
+      - "traefik.port=8081"
+      - "traefik.docker.network=proxy"
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf
+  influxdb:
+    image: quay.io/influxdb/influxdb:2.0.0-alpha
+    networks: 
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=influx"
+      - "traefik.frontend.rule=Host:influx.localhost"
+      - "traefik.docker.network=proxy"
+      - "traefik.port=9999"
+networks: 
+  proxy:
+    external: 
+      name: proxy
+  internal:
+    external: false

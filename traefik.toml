@@ -1,0 +1,25 @@
+defaultEntryPoints = ["http"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+
+[entryPoints.dash]
+  address=":8080"
+  [entryPoints.dash.auth]
+    [entryPoints.dash.auth.basic]
+    users = [
+      "admin:$apr1$A3524hz3$4k45BqlgN1aiwOs1pjMD9."
+    ]
+
+[api]
+entryPoint="dash"
+dashboard = true
+
+[metrics]
+  [metrics.influxdb]
+    address = "http://telegraf:8081"
+    protocol = "http"
+    pushinterval = "10s"
+    database = "traefik"
+    retentionpolicy = "100"
