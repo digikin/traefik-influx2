@@ -25,4 +25,6 @@ docker-compose up -d telegraf
 
 The listner port for telegraf has been moved to 8081 because it interfears with traefiks dashboard port.
 
-_I am working on creating a Traefik Dashboard but if anyone comes up with something cool please share. :)_  
+_I am working on creating a Traefik Dashboard but if anyone comes up with something cool please share. :)_
+
+![Dashboard](./images/Screenshot.png)
